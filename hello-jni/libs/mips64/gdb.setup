@@ -1,0 +1,3 @@
+set solib-search-path /Users/justinliu/Documents/git/android-ndk-test/hello-jni/obj/local/mips64
+source /Users/justinliu/Maaii/Android/android-ndk-r10c/prebuilt/common/gdb/common.setup
+directory /Users/justinliu/Maaii/Android/android-ndk-r10c/platforms/android-21/arch-mips64/usr/include /Users/justinliu/Documents/git/android-ndk-test/hello-jni/jni /Users/justinliu/Maaii/Android/android-ndk-r10c/sources/cxx-stl/system

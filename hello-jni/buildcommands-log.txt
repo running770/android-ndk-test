@@ -1,0 +1,115 @@
+rm -f ./libs/arm64-v8a/lib*.so ./libs/armeabi/lib*.so ./libs/armeabi-v7a/lib*.so ./libs/armeabi-v7a-hard/lib*.so ./libs/mips/lib*.so ./libs/mips64/lib*.so ./libs/x86/lib*.so ./libs/x86_64/lib*.so
+rm -f ./libs/arm64-v8a/gdbserver ./libs/armeabi/gdbserver ./libs/armeabi-v7a/gdbserver ./libs/armeabi-v7a-hard/gdbserver ./libs/mips/gdbserver ./libs/mips64/gdbserver ./libs/x86/gdbserver ./libs/x86_64/gdbserver
+rm -f ./libs/arm64-v8a/gdb.setup ./libs/armeabi/gdb.setup ./libs/armeabi-v7a/gdb.setup ./libs/armeabi-v7a-hard/gdb.setup ./libs/mips/gdb.setup ./libs/mips64/gdb.setup ./libs/x86/gdb.setup ./libs/x86_64/gdb.setup
+mkdir -p libs/arm64-v8a
+echo [arm64-v8a] "Gdbserver      ": "[aarch64-linux-android-4.9] libs/arm64-v8a/gdbserver"
+install -p /Users/justinliu/Maaii/Android/android-ndk-r10c/prebuilt/android-arm64/gdbserver/gdbserver ./libs/arm64-v8a/gdbserver
+echo [arm64-v8a] "Gdbsetup       ": "libs/arm64-v8a/gdb.setup"
+echo "set solib-search-path ./obj/local/arm64-v8a" > ./libs/arm64-v8a/gdb.setup
+echo "source /Users/justinliu/Maaii/Android/android-ndk-r10c/prebuilt/common/gdb/common.setup" >> ./libs/arm64-v8a/gdb.setup
+echo "directory /Users/justinliu/Maaii/Android/android-ndk-r10c/platforms/android-21/arch-arm64/usr/include jni /Users/justinliu/Maaii/Android/android-ndk-r10c/sources/cxx-stl/system" >> ./libs/arm64-v8a/gdb.setup
+mkdir -p libs/x86_64
+echo [x86_64] "Gdbserver      ": "[x86_64-4.9] libs/x86_64/gdbserver"
+install -p /Users/justinliu/Maaii/Android/android-ndk-r10c/prebuilt/android-x86_64/gdbserver/gdbserver ./libs/x86_64/gdbserver
+echo [x86_64] "Gdbsetup       ": "libs/x86_64/gdb.setup"
+echo "set solib-search-path ./obj/local/x86_64" > ./libs/x86_64/gdb.setup
+echo "source /Users/justinliu/Maaii/Android/android-ndk-r10c/prebuilt/common/gdb/common.setup" >> ./libs/x86_64/gdb.setup
+echo "directory /Users/justinliu/Maaii/Android/android-ndk-r10c/platforms/android-21/arch-x86_64/usr/include jni /Users/justinliu/Maaii/Android/android-ndk-r10c/sources/cxx-stl/system" >> ./libs/x86_64/gdb.setup
+mkdir -p libs/mips64
+echo [mips64] "Gdbserver      ": "[mips64el-linux-android-4.9] libs/mips64/gdbserver"
+install -p /Users/justinliu/Maaii/Android/android-ndk-r10c/prebuilt/android-mips64/gdbserver/gdbserver ./libs/mips64/gdbserver
+echo [mips64] "Gdbsetup       ": "libs/mips64/gdb.setup"
+echo "set solib-search-path ./obj/local/mips64" > ./libs/mips64/gdb.setup
+echo "source /Users/justinliu/Maaii/Android/android-ndk-r10c/prebuilt/common/gdb/common.setup" >> ./libs/mips64/gdb.setup
+echo "directory /Users/justinliu/Maaii/Android/android-ndk-r10c/platforms/android-21/arch-mips64/usr/include jni /Users/justinliu/Maaii/Android/android-ndk-r10c/sources/cxx-stl/system" >> ./libs/mips64/gdb.setup
+mkdir -p libs/armeabi-v7a
+echo [armeabi-v7a] "Gdbserver      ": "[arm-linux-androideabi-4.6] libs/armeabi-v7a/gdbserver"
+install -p /Users/justinliu/Maaii/Android/android-ndk-r10c/prebuilt/android-arm/gdbserver/gdbserver ./libs/armeabi-v7a/gdbserver
+echo [armeabi-v7a] "Gdbsetup       ": "libs/armeabi-v7a/gdb.setup"
+echo "set solib-search-path ./obj/local/armeabi-v7a" > ./libs/armeabi-v7a/gdb.setup
+echo "source /Users/justinliu/Maaii/Android/android-ndk-r10c/prebuilt/common/gdb/common.setup" >> ./libs/armeabi-v7a/gdb.setup
+echo "directory /Users/justinliu/Maaii/Android/android-ndk-r10c/platforms/android-3/arch-arm/usr/include jni /Users/justinliu/Maaii/Android/android-ndk-r10c/sources/cxx-stl/system" >> ./libs/armeabi-v7a/gdb.setup
+mkdir -p libs/armeabi
+echo [armeabi] "Gdbserver      ": "[arm-linux-androideabi-4.6] libs/armeabi/gdbserver"
+install -p /Users/justinliu/Maaii/Android/android-ndk-r10c/prebuilt/android-arm/gdbserver/gdbserver ./libs/armeabi/gdbserver
+echo [armeabi] "Gdbsetup       ": "libs/armeabi/gdb.setup"
+echo "set solib-search-path ./obj/local/armeabi" > ./libs/armeabi/gdb.setup
+echo "source /Users/justinliu/Maaii/Android/android-ndk-r10c/prebuilt/common/gdb/common.setup" >> ./libs/armeabi/gdb.setup
+echo "directory /Users/justinliu/Maaii/Android/android-ndk-r10c/platforms/android-3/arch-arm/usr/include jni /Users/justinliu/Maaii/Android/android-ndk-r10c/sources/cxx-stl/system" >> ./libs/armeabi/gdb.setup
+mkdir -p libs/x86
+echo [x86] "Gdbserver      ": "[x86-4.6] libs/x86/gdbserver"
+install -p /Users/justinliu/Maaii/Android/android-ndk-r10c/prebuilt/android-x86/gdbserver/gdbserver ./libs/x86/gdbserver
+echo [x86] "Gdbsetup       ": "libs/x86/gdb.setup"
+echo "set solib-search-path ./obj/local/x86" > ./libs/x86/gdb.setup
+echo "source /Users/justinliu/Maaii/Android/android-ndk-r10c/prebuilt/common/gdb/common.setup" >> ./libs/x86/gdb.setup
+echo "directory /Users/justinliu/Maaii/Android/android-ndk-r10c/platforms/android-9/arch-x86/usr/include jni /Users/justinliu/Maaii/Android/android-ndk-r10c/sources/cxx-stl/system" >> ./libs/x86/gdb.setup
+mkdir -p libs/mips
+echo [mips] "Gdbserver      ": "[mipsel-linux-android-4.6] libs/mips/gdbserver"
+install -p /Users/justinliu/Maaii/Android/android-ndk-r10c/prebuilt/android-mips/gdbserver/gdbserver ./libs/mips/gdbserver
+echo [mips] "Gdbsetup       ": "libs/mips/gdb.setup"
+echo "set solib-search-path ./obj/local/mips" > ./libs/mips/gdb.setup
+echo "source /Users/justinliu/Maaii/Android/android-ndk-r10c/prebuilt/common/gdb/common.setup" >> ./libs/mips/gdb.setup
+echo "directory /Users/justinliu/Maaii/Android/android-ndk-r10c/platforms/android-9/arch-mips/usr/include jni /Users/justinliu/Maaii/Android/android-ndk-r10c/sources/cxx-stl/system" >> ./libs/mips/gdb.setup
+mkdir -p obj/local/arm64-v8a/objs-debug/hello-jni
+echo [arm64-v8a] "Compile        ": "hello-jni <= hello-jni.c"
+/Users/justinliu/Maaii/Android/android-ndk-r10c/toolchains/aarch64-linux-android-4.9/prebuilt/darwin-x86_64/bin/aarch64-linux-android-gcc -MMD -MP -MF ./obj/local/arm64-v8a/objs-debug/hello-jni/hello-jni.o.d -fpic -ffunction-sections -funwind-tables -fstack-protector -no-canonical-prefixes -O2 -g -DNDEBUG -fomit-frame-pointer -fstrict-aliasing -funswitch-loops -finline-limit=300 -O0 -UNDEBUG -fno-omit-frame-pointer -fno-strict-aliasing -Ijni -DANDROID  -Wa,--noexecstack -Wformat -Werror=format-security    -I/Users/justinliu/Maaii/Android/android-ndk-r10c/platforms/android-21/arch-arm64/usr/include -c  jni/hello-jni.c -o ./obj/local/arm64-v8a/objs-debug/hello-jni/hello-jni.o 
+mkdir -p obj/local/arm64-v8a
+echo [arm64-v8a] "SharedLibrary  ": "libhello-jni.so"
+/Users/justinliu/Maaii/Android/android-ndk-r10c/toolchains/aarch64-linux-android-4.9/prebuilt/darwin-x86_64/bin/aarch64-linux-android-g++ -Wl,-soname,libhello-jni.so -shared --sysroot=/Users/justinliu/Maaii/Android/android-ndk-r10c/platforms/android-21/arch-arm64 ./obj/local/arm64-v8a/objs-debug/hello-jni/hello-jni.o -lgcc -no-canonical-prefixes  -Wl,--no-undefined -Wl,-z,noexecstack -Wl,-z,relro -Wl,-z,now   -lc -lm -o ./obj/local/arm64-v8a/libhello-jni.so
+echo [arm64-v8a] "Install        ": "libhello-jni.so => libs/arm64-v8a/libhello-jni.so"
+install -p ./obj/local/arm64-v8a/libhello-jni.so ./libs/arm64-v8a/libhello-jni.so
+/Users/justinliu/Maaii/Android/android-ndk-r10c/toolchains/aarch64-linux-android-4.9/prebuilt/darwin-x86_64/bin/aarch64-linux-android-strip --strip-unneeded  ./libs/arm64-v8a/libhello-jni.so
+mkdir -p obj/local/x86_64/objs-debug/hello-jni
+echo [x86_64] "Compile        ": "hello-jni <= hello-jni.c"
+/Users/justinliu/Maaii/Android/android-ndk-r10c/toolchains/x86_64-4.9/prebuilt/darwin-x86_64/bin/x86_64-linux-android-gcc -MMD -MP -MF ./obj/local/x86_64/objs-debug/hello-jni/hello-jni.o.d -ffunction-sections -funwind-tables -fstack-protector -no-canonical-prefixes -O2 -g -DNDEBUG -fomit-frame-pointer -fstrict-aliasing -funswitch-loops -finline-limit=300 -O0 -UNDEBUG -fno-omit-frame-pointer -fno-strict-aliasing -Ijni -DANDROID  -Wa,--noexecstack -Wformat -Werror=format-security    -I/Users/justinliu/Maaii/Android/android-ndk-r10c/platforms/android-21/arch-x86_64/usr/include -c  jni/hello-jni.c -o ./obj/local/x86_64/objs-debug/hello-jni/hello-jni.o 
+mkdir -p obj/local/x86_64
+echo [x86_64] "SharedLibrary  ": "libhello-jni.so"
+/Users/justinliu/Maaii/Android/android-ndk-r10c/toolchains/x86_64-4.9/prebuilt/darwin-x86_64/bin/x86_64-linux-android-g++ -Wl,-soname,libhello-jni.so -shared --sysroot=/Users/justinliu/Maaii/Android/android-ndk-r10c/platforms/android-21/arch-x86_64 ./obj/local/x86_64/objs-debug/hello-jni/hello-jni.o -lgcc -no-canonical-prefixes  -Wl,--no-undefined -Wl,-z,noexecstack -Wl,-z,relro -Wl,-z,now   -lc -lm -o ./obj/local/x86_64/libhello-jni.so
+echo [x86_64] "Install        ": "libhello-jni.so => libs/x86_64/libhello-jni.so"
+install -p ./obj/local/x86_64/libhello-jni.so ./libs/x86_64/libhello-jni.so
+/Users/justinliu/Maaii/Android/android-ndk-r10c/toolchains/x86_64-4.9/prebuilt/darwin-x86_64/bin/x86_64-linux-android-strip --strip-unneeded  ./libs/x86_64/libhello-jni.so
+mkdir -p obj/local/mips64/objs-debug/hello-jni
+echo [mips64] "Compile        ": "hello-jni <= hello-jni.c"
+/Users/justinliu/Maaii/Android/android-ndk-r10c/toolchains/mips64el-linux-android-4.9/prebuilt/darwin-x86_64/bin/mips64el-linux-android-gcc -MMD -MP -MF ./obj/local/mips64/objs-debug/hello-jni/hello-jni.o.d -fpic -fno-strict-aliasing -finline-functions -ffunction-sections -funwind-tables -fmessage-length=0 -fno-inline-functions-called-once -fgcse-after-reload -frerun-cse-after-loop -frename-registers -no-canonical-prefixes -O0 -g -fno-omit-frame-pointer -Ijni -DANDROID  -Wa,--noexecstack -Wformat -Werror=format-security    -I/Users/justinliu/Maaii/Android/android-ndk-r10c/platforms/android-21/arch-mips64/usr/include -c  jni/hello-jni.c -o ./obj/local/mips64/objs-debug/hello-jni/hello-jni.o 
+mkdir -p obj/local/mips64
+echo [mips64] "SharedLibrary  ": "libhello-jni.so"
+/Users/justinliu/Maaii/Android/android-ndk-r10c/toolchains/mips64el-linux-android-4.9/prebuilt/darwin-x86_64/bin/mips64el-linux-android-g++ -Wl,-soname,libhello-jni.so -shared --sysroot=/Users/justinliu/Maaii/Android/android-ndk-r10c/platforms/android-21/arch-mips64 ./obj/local/mips64/objs-debug/hello-jni/hello-jni.o -lgcc -no-canonical-prefixes  -Wl,--no-undefined -Wl,-z,noexecstack -Wl,-z,relro -Wl,-z,now   -lc -lm -o ./obj/local/mips64/libhello-jni.so
+echo [mips64] "Install        ": "libhello-jni.so => libs/mips64/libhello-jni.so"
+install -p ./obj/local/mips64/libhello-jni.so ./libs/mips64/libhello-jni.so
+/Users/justinliu/Maaii/Android/android-ndk-r10c/toolchains/mips64el-linux-android-4.9/prebuilt/darwin-x86_64/bin/mips64el-linux-android-strip --strip-unneeded  ./libs/mips64/libhello-jni.so
+mkdir -p obj/local/armeabi-v7a/objs-debug/hello-jni
+echo [armeabi-v7a] "Compile thumb  ": "hello-jni <= hello-jni.c"
+/Users/justinliu/Maaii/Android/android-ndk-r10c/toolchains/arm-linux-androideabi-4.6/prebuilt/darwin-x86_64/bin/arm-linux-androideabi-gcc -MMD -MP -MF ./obj/local/armeabi-v7a/objs-debug/hello-jni/hello-jni.o.d -fpic -ffunction-sections -funwind-tables -fstack-protector -no-canonical-prefixes -march=armv7-a -mfpu=vfpv3-d16 -mfloat-abi=softfp -mthumb -Os -g -DNDEBUG -fomit-frame-pointer -fno-strict-aliasing -finline-limit=64 -O0 -UNDEBUG -marm -fno-omit-frame-pointer -Ijni -DANDROID  -Wa,--noexecstack -Wformat -Werror=format-security    -I/Users/justinliu/Maaii/Android/android-ndk-r10c/platforms/android-3/arch-arm/usr/include -c  jni/hello-jni.c -o ./obj/local/armeabi-v7a/objs-debug/hello-jni/hello-jni.o 
+mkdir -p obj/local/armeabi-v7a
+echo [armeabi-v7a] "SharedLibrary  ": "libhello-jni.so"
+/Users/justinliu/Maaii/Android/android-ndk-r10c/toolchains/arm-linux-androideabi-4.6/prebuilt/darwin-x86_64/bin/arm-linux-androideabi-g++ -Wl,-soname,libhello-jni.so -shared --sysroot=/Users/justinliu/Maaii/Android/android-ndk-r10c/platforms/android-3/arch-arm ./obj/local/armeabi-v7a/objs-debug/hello-jni/hello-jni.o -lgcc -no-canonical-prefixes -march=armv7-a -Wl,--fix-cortex-a8  -Wl,--no-undefined -Wl,-z,noexecstack -Wl,-z,relro -Wl,-z,now   -lc -lm -o ./obj/local/armeabi-v7a/libhello-jni.so
+echo [armeabi-v7a] "Install        ": "libhello-jni.so => libs/armeabi-v7a/libhello-jni.so"
+install -p ./obj/local/armeabi-v7a/libhello-jni.so ./libs/armeabi-v7a/libhello-jni.so
+/Users/justinliu/Maaii/Android/android-ndk-r10c/toolchains/arm-linux-androideabi-4.6/prebuilt/darwin-x86_64/bin/arm-linux-androideabi-strip --strip-unneeded  ./libs/armeabi-v7a/libhello-jni.so
+mkdir -p obj/local/armeabi/objs-debug/hello-jni
+echo [armeabi] "Compile thumb  ": "hello-jni <= hello-jni.c"
+/Users/justinliu/Maaii/Android/android-ndk-r10c/toolchains/arm-linux-androideabi-4.6/prebuilt/darwin-x86_64/bin/arm-linux-androideabi-gcc -MMD -MP -MF ./obj/local/armeabi/objs-debug/hello-jni/hello-jni.o.d -fpic -ffunction-sections -funwind-tables -fstack-protector -no-canonical-prefixes -march=armv5te -mtune=xscale -msoft-float -mthumb -Os -g -DNDEBUG -fomit-frame-pointer -fno-strict-aliasing -finline-limit=64 -O0 -UNDEBUG -marm -fno-omit-frame-pointer -Ijni -DANDROID  -Wa,--noexecstack -Wformat -Werror=format-security    -I/Users/justinliu/Maaii/Android/android-ndk-r10c/platforms/android-3/arch-arm/usr/include -c  jni/hello-jni.c -o ./obj/local/armeabi/objs-debug/hello-jni/hello-jni.o 
+mkdir -p obj/local/armeabi
+echo [armeabi] "SharedLibrary  ": "libhello-jni.so"
+/Users/justinliu/Maaii/Android/android-ndk-r10c/toolchains/arm-linux-androideabi-4.6/prebuilt/darwin-x86_64/bin/arm-linux-androideabi-g++ -Wl,-soname,libhello-jni.so -shared --sysroot=/Users/justinliu/Maaii/Android/android-ndk-r10c/platforms/android-3/arch-arm ./obj/local/armeabi/objs-debug/hello-jni/hello-jni.o -lgcc -no-canonical-prefixes  -Wl,--no-undefined -Wl,-z,noexecstack -Wl,-z,relro -Wl,-z,now   -lc -lm -o ./obj/local/armeabi/libhello-jni.so
+echo [armeabi] "Install        ": "libhello-jni.so => libs/armeabi/libhello-jni.so"
+install -p ./obj/local/armeabi/libhello-jni.so ./libs/armeabi/libhello-jni.so
+/Users/justinliu/Maaii/Android/android-ndk-r10c/toolchains/arm-linux-androideabi-4.6/prebuilt/darwin-x86_64/bin/arm-linux-androideabi-strip --strip-unneeded  ./libs/armeabi/libhello-jni.so
+mkdir -p obj/local/x86/objs-debug/hello-jni
+echo [x86] "Compile        ": "hello-jni <= hello-jni.c"
+/Users/justinliu/Maaii/Android/android-ndk-r10c/toolchains/x86-4.6/prebuilt/darwin-x86_64/bin/i686-linux-android-gcc -MMD -MP -MF ./obj/local/x86/objs-debug/hello-jni/hello-jni.o.d -ffunction-sections -funwind-tables -no-canonical-prefixes -fstack-protector -O2 -g -DNDEBUG -fomit-frame-pointer -fstrict-aliasing -funswitch-loops -finline-limit=300 -O0 -UNDEBUG -fno-omit-frame-pointer -fno-strict-aliasing -Ijni -DANDROID  -Wa,--noexecstack -Wformat -Werror=format-security    -I/Users/justinliu/Maaii/Android/android-ndk-r10c/platforms/android-9/arch-x86/usr/include -c  jni/hello-jni.c -o ./obj/local/x86/objs-debug/hello-jni/hello-jni.o 
+mkdir -p obj/local/x86
+echo [x86] "SharedLibrary  ": "libhello-jni.so"
+/Users/justinliu/Maaii/Android/android-ndk-r10c/toolchains/x86-4.6/prebuilt/darwin-x86_64/bin/i686-linux-android-g++ -Wl,-soname,libhello-jni.so -shared --sysroot=/Users/justinliu/Maaii/Android/android-ndk-r10c/platforms/android-9/arch-x86 ./obj/local/x86/objs-debug/hello-jni/hello-jni.o -lgcc -no-canonical-prefixes  -Wl,--no-undefined -Wl,-z,noexecstack -Wl,-z,relro -Wl,-z,now   -lc -lm -o ./obj/local/x86/libhello-jni.so
+echo [x86] "Install        ": "libhello-jni.so => libs/x86/libhello-jni.so"
+install -p ./obj/local/x86/libhello-jni.so ./libs/x86/libhello-jni.so
+/Users/justinliu/Maaii/Android/android-ndk-r10c/toolchains/x86-4.6/prebuilt/darwin-x86_64/bin/i686-linux-android-strip --strip-unneeded  ./libs/x86/libhello-jni.so
+mkdir -p obj/local/mips/objs-debug/hello-jni
+echo [mips] "Compile        ": "hello-jni <= hello-jni.c"
+/Users/justinliu/Maaii/Android/android-ndk-r10c/toolchains/mipsel-linux-android-4.6/prebuilt/darwin-x86_64/bin/mipsel-linux-android-gcc -MMD -MP -MF ./obj/local/mips/objs-debug/hello-jni/hello-jni.o.d -fpic -fno-strict-aliasing -finline-functions -ffunction-sections -funwind-tables -fmessage-length=0 -fno-inline-functions-called-once -fgcse-after-reload -frerun-cse-after-loop -frename-registers -no-canonical-prefixes -O0 -g -fno-omit-frame-pointer -Ijni -DANDROID  -Wa,--noexecstack -Wformat -Werror=format-security    -I/Users/justinliu/Maaii/Android/android-ndk-r10c/platforms/android-9/arch-mips/usr/include -c  jni/hello-jni.c -o ./obj/local/mips/objs-debug/hello-jni/hello-jni.o 
+mkdir -p obj/local/mips
+echo [mips] "SharedLibrary  ": "libhello-jni.so"
+/Users/justinliu/Maaii/Android/android-ndk-r10c/toolchains/mipsel-linux-android-4.6/prebuilt/darwin-x86_64/bin/mipsel-linux-android-g++ -Wl,-soname,libhello-jni.so -shared --sysroot=/Users/justinliu/Maaii/Android/android-ndk-r10c/platforms/android-9/arch-mips ./obj/local/mips/objs-debug/hello-jni/hello-jni.o -lgcc -no-canonical-prefixes  -Wl,--no-undefined -Wl,-z,noexecstack -Wl,-z,relro -Wl,-z,now   -lc -lm -o ./obj/local/mips/libhello-jni.so
+echo [mips] "Install        ": "libhello-jni.so => libs/mips/libhello-jni.so"
+install -p ./obj/local/mips/libhello-jni.so ./libs/mips/libhello-jni.so
+/Users/justinliu/Maaii/Android/android-ndk-r10c/toolchains/mipsel-linux-android-4.6/prebuilt/darwin-x86_64/bin/mipsel-linux-android-strip --strip-unneeded  ./libs/mips/libhello-jni.so
